@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-//use Illuminate\Http\Request;
-use App\Models\Service;
+use App\Http\Requests\Services\StoreServiceRequest;
+use App\Http\Requests\Services\UpdateServiceRequest;
 use App\Http\Resources\ServiceResource;
-use App\Http\Requests\StoreServiceRequest;
-use App\Http\Requests\UpdateServiceRequest;
+use App\Models\Service;
 use Illuminate\Support\Facades\Cache;
+
+//use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {

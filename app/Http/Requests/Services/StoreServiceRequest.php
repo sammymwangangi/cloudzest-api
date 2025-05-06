@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Services;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 
-class StoreProductRequest extends FormRequest
+class StoreServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,7 +34,7 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => 'required|unique:products,slug|max:255',
+            'slug' => 'required|unique:services,slug|max:255',
             'meta_title' => 'required|max:255',
             'meta_description' => 'required|max:255',
             'seo_keywords' => 'required|max:255',
@@ -47,7 +47,7 @@ class StoreProductRequest extends FormRequest
             'introduction_content' => 'required|max:255',
             'testimonial_or_quote' => 'required|max:255',
             'testimonial_author' => 'required|max:255',
-            'published' => 'required|boolean',
+            'published' => 'required',
         ];
     }
 }
