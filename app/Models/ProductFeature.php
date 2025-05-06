@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ValueItem extends Model
+class ProductFeature extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = [];
-
+    
     /**
-     * Get the page that owns the value item.
+     * Get the product that owns the feature.
      */
-    public function page(): BelongsTo
+    public function product(): BelongsTo
     {
-        return $this->belongsTo(Page::class);
+        return $this->belongsTo(Product::class);
     }
 }

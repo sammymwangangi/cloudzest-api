@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 
-class UpdateServiceRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -36,7 +36,7 @@ class UpdateServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'slug' => 'nullable|max:255',
+            'slug' => 'nullable|max:255|unique:products,slug,' . $this->product->id,
             'meta_title' => 'nullable|max:255',
             'meta_description' => 'nullable|max:255',
             'seo_keywords' => 'nullable|max:255',
@@ -49,7 +49,7 @@ class UpdateServiceRequest extends FormRequest
             'introduction_content' => 'nullable|max:255',
             'testimonial_or_quote' => 'nullable|max:255',
             'testimonial_author' => 'nullable|max:255',
-            'published' => 'nullable',
+            'published' => 'nullable|boolean',
         ];
     }
 }
