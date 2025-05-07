@@ -21,7 +21,7 @@ class ServiceController extends Controller
 //        $services = Service::paginate(10);
         // Use the Cache facade to store the services for one hour
         $services = Cache::remember('services', 3600, function () {
-            return Service::paginate(15);
+            return Service::with('features')->paginate(15);
         });
         return ServiceResource::collection($services);
     }
@@ -41,6 +41,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        $service->load('features');
         return new ServiceResource($service);
     }
 

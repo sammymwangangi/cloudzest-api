@@ -14,6 +14,15 @@ class ServiceFeatureResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'service_id' => $this->service_id,
+            'feature_heading' => $this->feature_heading,
+            'feature_content' => $this->feature_content,
+            'order' => $this->order,
+            'is_active' => $this->is_active,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

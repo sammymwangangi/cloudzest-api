@@ -31,6 +31,7 @@ class ServiceResource extends JsonResource
             'testimonial_or_quote' => $this->testimonial_or_quote,
             'testimonial_author' => $this->testimonial_author,
             'published' => $this->published,
+            'features' => ServiceFeatureResource::collection($this->whenLoaded('features')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
