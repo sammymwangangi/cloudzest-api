@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Service extends Model
+class ServiceCategory extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
     /**
-     * Get the features for the service.
+     * Get the service highlights for the category.
      */
-    public function features(): HasMany
+    public function serviceHighlights(): HasMany
     {
-        return $this->hasMany(ServiceFeature::class);
+        return $this->hasMany(ServiceHighlight::class);
     }
 }

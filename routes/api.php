@@ -17,6 +17,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/services', 'App\Http\Controllers\Api\ServiceController');
     Route::apiResource('/products', 'App\Http\Controllers\Api\ProductController');
     Route::apiResource('/pages', 'App\Http\Controllers\Api\PagesController');
+    Route::apiResource('/homepages', 'App\Http\Controllers\Api\HomepageController');
+    Route::apiResource('/service-categories', 'App\Http\Controllers\Api\ServiceCategoryController');
 
     // Image upload endpoint
     Route::post('/upload/image', 'App\Http\Controllers\Api\ImageUploadController@upload');
