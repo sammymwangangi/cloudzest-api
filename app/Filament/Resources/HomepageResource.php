@@ -19,6 +19,8 @@ class HomepageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
+    protected static ?string $navigationLabel = 'Home page content';
+
     public static function form(Form $form): Form
     {
         return $form
